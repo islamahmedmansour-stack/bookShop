@@ -1,0 +1,75 @@
+li{
+    list-style: none;
+}
+
+:root{
+--vColor: #6251DD;
+--OColor: #EF6B4A;
+--LColor: #FCECEC;
+}
+.BColor{
+    color: var(--vColor);
+}
+.OColor{
+    color: var(--OColor);
+}
+.orange-button{
+    background-color: var(--OColor);
+    border: none;
+    border-radius: 10px;
+}
+.purple-button{
+    border: 2px solid var(--vColor);
+    color: var(--vColor);
+    border-radius: 10px;
+    background-color: transparent;
+}
+.purple-button:hover{
+    background-color: var(--vColor);
+    color: white;
+}
+/* ================================================== */
+.upperNavdiv{
+    background-color: #393280;
+    height: 40px;
+}
+.upperNavdiv a{
+    color: white;
+}
+/* ================================================== */
+.navBarDiv{
+    height: 60px;
+}
+.navBarDiv img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.border-right{
+    border-right: 2px solid black;
+}
+/* ====================================================== */
+.homePageDiv{
+    background: linear-gradient(91deg,rgb(247, 173, 173) 38%, rgba(255, 255, 255, 1) 73%);
+    height: calc(100vh - 100px);
+    
+}
+/* ====================================================== */
+.footerDiv{
+    width: 100%;
+    height: fit-content;
+    background-color: #ED553B;
+    color: white;
+}
+.footerDiv a {
+    color: white;
+    text-decoration: none;
+}
+/* ====================================================== */
+.categoryDiv{
+    color: var(--vColor);
+}
+/* ====================================================== */
+.NewBooks{
+    background-color: var(--LColor);
+}
