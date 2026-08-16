@@ -13,6 +13,7 @@ import Books from './Modules/MasterLayout/components/Books/Books'
 import Cart from './Modules/MasterLayout/components/cart/Cart'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import ProtectedRoutes from './ProtectedRoutes'
 function App() {
   const routes = createBrowserRouter([
     {
@@ -29,8 +30,8 @@ function App() {
       ],
     },
     {
-      path: '/dashboard',
-      element: <MasterLayout />,
+      path: 'dashboard',
+      element: <ProtectedRoutes> <MasterLayout /> </ProtectedRoutes> ,
       errorElement: <NotFound />,
       children: [
         { index: true, element: <Home /> },

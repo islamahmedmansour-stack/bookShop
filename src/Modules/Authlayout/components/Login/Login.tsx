@@ -1,12 +1,15 @@
 import axios from "axios";
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { Authcontext } from "../../../../context/Authcontext/Authcontext";
 interface loginForm {
     password:string ,
     email:string
 }
 export default function Login() {
+  let{saveUserData}:any = useContext(Authcontext);
    // -------------- Use Form  & response & navigate ----------------
    let navigate = useNavigate();
     let {register,handleSubmit,formState:{errors}}= useForm<loginForm>();
@@ -15,6 +18,7 @@ export default function Login() {
         let response = await axios.post('https://upskilling-egypt.com:3007/api/auth/login',data);
         toast.success(response?.data?.message);
         localStorage.setItem( 'userToken' , JSON.stringify(response?.data?.data?.accessToken) );
+        saveUserData()
         navigate('/dashboard');
       }catch(error){
         toast.error('Login failer');
@@ -44,6 +48,7 @@ export default function Login() {
               />
             Remember Me
           </label>
+          <Link to='/forgetPass'>Forget Password</Link>
               {/* *****************login submit ***************** */}
               <button type="submit" className="mt-3 orange-button py-2 text-white">Login</button>
         </form>

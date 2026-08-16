@@ -4,9 +4,19 @@ import './index.css'
 import App from './App.tsx'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.js'
+import AuthcontextProvider from './context/Authcontext/Authcontext.tsx'
+import { ThemeProvider, createTheme } from '@mui/material/styles'
+import CssBaseline from '@mui/material/CssBaseline'
+
+const theme = createTheme()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <AuthcontextProvider>
+        <App />
+      </AuthcontextProvider>
+    </ThemeProvider>
   </StrictMode>,
 )
